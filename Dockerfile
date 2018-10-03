@@ -17,5 +17,3 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
 	rm -rf /var/lib/apt/lists/* /tmp/* && \
 	easy_install -i https://pypi.tuna.tsinghua.edu.cn/simple -U pip && \
 	pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cmake
-	
-RUN echo fs.file-max = 100000 >> /etc/sysctl.conf && sysctl -p
