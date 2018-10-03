@@ -15,7 +15,7 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && \
 	echo deb-src http://apt.llvm.org/jessie/ llvm-toolchain-jessie-7 main >> /etc/apt/sources.list.d/llvm.list && \
 	apt-get update && apt-get install -y llvm-7 clang-7 lldb-7 liblldb-7-dev libunwind8 libunwind8-dev gettext libicu-dev liblttng-ust-dev libcurl4-openssl-dev libssl-dev libkrb5-dev libnuma-dev && \
 	rm -rf /var/lib/apt/lists/* /tmp/* && \
-	easy_install -U pip && \
-	pip install cmake
+	easy_install -i https://pypi.tuna.tsinghua.edu.cn/simple -U pip && \
+	pip install -i https://pypi.tuna.tsinghua.edu.cn/simple cmake
 	
 RUN echo fs.file-max = 100000 >> /etc/sysctl.conf && sysctl -p
